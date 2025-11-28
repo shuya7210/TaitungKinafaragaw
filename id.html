@@ -34,7 +34,7 @@
     box-shadow: 0 12px 40px rgba(0,0,0,0.8);
     border: 1px solid rgba(255, 204, 102, 0.2);
   }
-
+  
   header{margin-bottom: 25px; text-align: center;}
   h1{margin:0; font-size:2rem; color:var(--gold-main); text-shadow: 0 0 8px rgba(255, 215, 0, 0.4); border-bottom: 3px solid var(--gold-main); padding-bottom: 10px;}
   p.lead{margin:6px 0 18px 0; color:rgba(255, 204, 102, 0.7); font-size: 1.1em;}
@@ -48,7 +48,7 @@
     min-height: 250px; 
     transition: all 0.5s ease;
   }
-
+  
   .section-content {
       padding: 15px;
       background: rgba(0, 0, 0, 0.4);
@@ -98,7 +98,7 @@
     background: rgba(30, 30, 30, 0.8); border: 1px dashed rgba(255, 204, 102, 0.4); padding: 25px;
     text-align: center; margin: 20px 0; border-radius: 8px; color: rgba(255, 204, 102, 0.6); font-style: italic;
   }
-
+  
   .plot-text {
     margin-top:20px; padding:10px 15px; border-left: 4px solid var(--gold-main); color:rgba(255, 204, 102, 0.8); 
     font-size: 0.95rem; background: rgba(30, 30, 30, 0.7); border-radius: 4px;
@@ -128,7 +128,7 @@
         <p style="text-align: center; font-size: 1.2rem; margin-top: 20px;">
           <em>「鯉魚沉眠,神鱗盡失。修復者,你聽到了山神的呼喚嗎?」</em>
         </p>
-
+        
         <div class="plot-text">
           你被選為『修復者』,需沿古路找回五鱗。這是一場與時間、與失序世界的賽跑。你準備好進入鯉魚山的古老迷陣了嗎?
         </div>
@@ -138,12 +138,12 @@
         </div>
       </div>
     </section>
-
+    
     <section id="challenge" class="section hidden">
       <div class="section-content">
         <h2>接受挑戰</h2>
         <p style="font-size: 1.1rem; color:var(--text-light);">
-          **山神最終考驗:**<br>
+          <strong>山神最終考驗:</strong><br>
           你需要找回五片散落的鱗片,每片鱗片都藏在鯉魚山的五個不同部位,由古老的謎語守護。一旦踏入,便無回頭路。
         </p>
 
@@ -166,13 +166,14 @@
         <div style="margin-top:8px;">
           <strong>
           觀察門神圖像,找出『冠』與『鹿』的圖樣, 從成語陣中找出正確的成語,封印即將解除。<br>
+          </strong>
         </div>
 
         <div class="media-placeholder">
             [圖片 Placeholder: 門神圖案 PLACEHOLDER_gategod.png]
         </div>
 
-        <input id="input1" type="text" placeholder="">
+        <input id="input1" type="text" placeholder="請輸入成語">
         <div id="hint1" class="hint hidden" aria-live="polite"></div>
 
         <div class="flex-row" style="justify-content: flex-end;">
@@ -186,16 +187,16 @@
       <div class="section-content">
         <h3>第二關｜魚首:巨鯉之眼</h3>
         <div style="margin-top:8px;">
-
           <strong>
           請幫助公主復原情書並解除封印,找出關鍵數字。並在現場找出關鍵數字對應的山名,請輸入山名:
+          </strong>
         </div>
 
         <div class="media-placeholder">
             [圖片 Placeholder: 情書拼圖 PLACEHOLDER_letter_puzzle.png]
         </div>
 
-        <input id="input2" type="text" placeholder="">
+        <input id="input2" type="text" placeholder="請輸入山名">
         <div id="hint2" class="hint hidden" aria-live="polite"></div>
 
         <div class="flex-row" style="justify-content: flex-end;">
@@ -209,11 +210,11 @@
       <div class="section-content">
         <h3>第三關｜魚背:聽覺之鱗</h3>
         <div style="margin-top:8px;">
-
-          山神把指引封在鳴叫聲中,其中知道鱗片位置的,有 **3隻鳥**。透過聽覺與圖示分析,找出真正的3隻鳥。<br><br>
+          山神把指引封在鳴叫聲中,其中知道鱗片位置的,有 <strong>3隻鳥</strong>。透過聽覺與圖示分析,找出真正的3隻鳥。<br><br>
 
           <strong>
           現場播放6種鳥叫聲。比對鳥類圖示卡,並輸入圖示卡上鳥類之對比聲音數字。
+          </strong>
         </div>
 
         <div class="media-placeholder">
@@ -221,7 +222,7 @@
             (請輸入正確的鳥類代號組合)
         </div>
 
-        <input id="input3" type="text" placeholder="">
+        <input id="input3" type="text" placeholder="例如: 123">
         <div id="hint3" class="hint hidden" aria-live="polite"></div>
 
         <div class="flex-row" style="justify-content: flex-end;">
@@ -235,16 +236,16 @@
       <div class="section-content">
         <h3>第四關｜魚尾:方向之鱗</h3>
         <div style="margin-top:8px;">
-
           <strong>
           巨鯉的尾鰭掌管方向。旋轉你的『島嶼輪盤』,將綠島與蘭嶼對回正確方位,找出有『十字記號』的聖物。請輸入三角點界碑上的文字:
+          </strong>
         </div>
 
         <div class="media-placeholder">
             [圖片 Placeholder: 羅盤地圖 PLACEHOLDER_map.png]
         </div>
 
-        <input id="input4" type="text" placeholder="">
+        <input id="input4" type="text" placeholder="請輸入界碑文字">
         <div id="hint4" class="hint hidden" aria-live="polite"></div>
 
         <div class="flex-row" style="justify-content: flex-end;">
@@ -258,18 +259,18 @@
       <div class="section-content">
         <h3>第五關｜趙子龍廟:武魂之鱗</h3>
         <div style="margin-top:8px;">
-          <strong>
           最後的試煉在此等你。趙子龍守護鯉魚山百年餘,他的力量被封存在三個「武魂精神」之中。<br><br>
 
           <strong>
           請拿出你的透明圖卡,與現場的出土文物一一比對,拼湊出代表趙子龍武魂精神的三個關鍵字。
+          </strong>
         </div>
 
         <div class="media-placeholder">
             [圖片 Placeholder: 透明圖卡比對 PLACEHOLDER_overlay.png]
         </div>
 
-        <input id="input5" type="text" placeholder="">
+        <input id="input5" type="text" placeholder="請輸入三個關鍵字">
         <div id="hint5" class="hint hidden" aria-live="polite"></div>
 
         <div class="flex-row" style="justify-content: flex-end;">
@@ -284,81 +285,219 @@
         <h3>最終章｜龍鳳塔:神力核心</h3>
         <div style="margin-top:8px;">
           <strong>
-          恭喜你集齊五片鱗片！山神的力量正在恢復，鯉魚山即將甦醒……
+          恭喜你集齊五片鱗片!請仔細觀察鱗片上的字樣,找出此地的全名:請輸入關鍵字:
+          </strong>
         </div>
-        
-        <div class="plot-text">
-          <em>山神:</em> 感謝你，修復者。你已證明自己的智慧與勇氣。鯉魚山的力量將再次守護這片土地。
+
+        <div class="media-placeholder">
+            [圖片 Placeholder: 五片鱗片圖 PLACEHOLDER_scales.png]
         </div>
-        
-        <div class="flex-row" style="justify-content: center;">
-          <button class="btn" onclick="goTo('start')">重新開始旅程</button>
+
+        <input id="inputFinal" type="text" placeholder="請輸入龍鳳塔的全名">
+        <div id="hintFinal" class="hint hidden" aria-live="polite"></div>
+
+        <div class="flex-row" style="justify-content: flex-end;">
+          <button id="submitFinal" class="btn">提交答案</button>
+          <button id="doneBtn" class="btn hidden" onclick="congrat()">完成儀式</button>
         </div>
       </div>
     </section>
+
+    <section id="ending" class="section hidden" style="background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 140, 0, 0.05));">
+      <div class="section-content" style="text-align: center; padding: 40px 20px;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 30px; text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);">
+          ✨ 山神復甦 ✨
+        </h2>
+        
+        <div class="media-placeholder" style="margin: 30px 0; padding: 60px 30px; border: 2px solid var(--gold-main); background: rgba(0, 0, 0, 0.6);">
+            [結局配圖 Placeholder: 山神甦醒圖 PLACEHOLDER_ending.png]
+        </div>
+
+        <div style="font-size: 1.3rem; line-height: 2; color: var(--text-light); margin: 30px 0; padding: 25px; background: rgba(0, 0, 0, 0.5); border-radius: 10px; border-left: 5px solid var(--gold-main);">
+          <p style="margin: 15px 0;">
+            「太棒了！你找出了龍鳳塔的真正名號。」
+          </p>
+          <p style="margin: 15px 0;">
+            「山海之脈正式被喚醒，力量開始環繞整座鯉魚山——」
+          </p>
+          <p style="margin: 15px 0; color: var(--gold-main); font-weight: 700;">
+            「這是一個只有真正完成任務的人才能看到的景象。」
+          </p>
+        </div>
+
+        <div style="margin-top: 40px; padding: 20px; background: rgba(255, 215, 0, 0.1); border-radius: 10px;">
+          <p style="font-size: 1.5rem; color: var(--gold-main); font-weight: 700; margin-bottom: 15px;">
+            🏆 恭喜你，修復者！
+          </p>
+          <p style="font-size: 1.1rem; color: rgba(255, 204, 102, 0.9);">
+            五片神鱗已歸位，鯉魚山的守護之力重新甦醒。<br>
+            風、雨、山、海再次回歸平衡，台東大地將繼續繁榮昌盛。
+          </p>
+        </div>
+
+        <div class="flex-row" style="justify-content: center; margin-top: 40px;">
+          <button class="btn" onclick="show('start')">重新開始旅程</button>
+        </div>
+      </div>
+    </section>
+
+    <footer style="margin-top:20px; color:rgba(255, 204, 102, 0.4); font-size:14px; text-align: center;">
+      ※ 網頁設計:淑雅
+    </footer>
   </div>
 
-  <script>
-    // 顯示指定區塊，隱藏其他所有區塊
-    function show(sectionId) {
-      // 隱藏所有區塊
-      const sections = document.querySelectorAll('.section');
-      sections.forEach(section => {
-        section.classList.add('hidden');
-      });
-      
-      // 顯示指定區塊
-      const targetSection = document.getElementById(sectionId);
-      if (targetSection) {
-        targetSection.classList.remove('hidden');
-      }
-    }
+<script>
+  function norm(s){
+    if(!s) return '';
+    return s.replace(/[\s\u3000\uFEFF\xA0]/g,'').trim().toLowerCase();
+  }
+
+  function show(id){
+    const sections = document.querySelectorAll('section');
+    const header = document.getElementById('mainHeader');
     
-    // 前往指定關卡
-    function goTo(sectionId) {
-      show(sectionId);
+    sections.forEach(s => s.classList.add('hidden'));
+    document.getElementById(id).classList.remove('hidden');
+
+    if (id === 'start' || id === 'challenge') {
+        header.classList.remove('hidden');
+    } else {
+        header.classList.add('hidden');
     }
+
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  function goTo(id){
+    show(id);
+  }
+
+  document.getElementById('btnReady').addEventListener('click', ()=>{
+    document.getElementById('startMsg').textContent = '✅ 挑戰開始!你已踏上尋鱗之路。第一關已解鎖:忠烈祠。';
+    document.getElementById('startMsg').classList.add('hint-success');
+    document.getElementById('startMsg').classList.remove('hidden');
+    setTimeout(() => show('gate1'), 1500);
+  });
+  
+  document.getElementById('btnWait').addEventListener('click', ()=>{
+    document.getElementById('startMsg').classList.remove('hint-success');
+    document.getElementById('startMsg').classList.remove('hidden');
+    document.getElementById('startMsg').textContent = '⏳ 山神會在此處等候你的歸來。';
+  });
+
+  function handleSubmit(inputId, hintId, nextId, correct, successMsg, errorMsg) {
+    const v = norm(document.getElementById(inputId).value);
+    const hintEl = document.getElementById(hintId);
+    const nextBtn = document.getElementById(nextId);
     
-    // 初始化頁面 - 只顯示開始區塊
-    document.addEventListener('DOMContentLoaded', function() {
-      // 只顯示開始區塊
-      show('start');
-      
-      // 為"接受挑戰"按鈕添加事件監聽器
-      document.getElementById('btnReady').addEventListener('click', function() {
-        show('gate1');
-      });
-      
-      // 為"再等等"按鈕添加事件監聽器
-      document.getElementById('btnWait').addEventListener('click', function() {
-        document.getElementById('startMsg').textContent = '請準備好後再點擊「我準備好了,接受挑戰!」';
-        document.getElementById('startMsg').classList.remove('hidden');
-      });
-      
-      // 為各關卡提交按鈕添加事件監聽器
-      for (let i = 1; i <= 5; i++) {
-        document.getElementById(`submit${i}`).addEventListener('click', function() {
-          const input = document.getElementById(`input${i}`);
-          const hint = document.getElementById(`hint${i}`);
-          const nextBtn = document.getElementById(`next${i}`);
-          
-          // 簡單的驗證 - 實際應用中應該檢查正確答案
-          if (input.value.trim() === '') {
-            hint.textContent = '請輸入答案後再提交！';
-            hint.classList.remove('hidden');
-            hint.classList.remove('hint-success');
-            hint.classList.add('hint');
-          } else {
-            hint.textContent = '答案正確！可以前往下一關。';
-            hint.classList.remove('hidden');
-            hint.classList.remove('hint');
-            hint.classList.add('hint-success');
-            nextBtn.classList.remove('hidden');
-          }
-        });
-      }
-    });
-  </script>
+    hintEl.classList.remove('hint-success');
+    nextBtn.classList.add('hidden');
+
+    if(v === norm(correct)){
+      hintEl.textContent = successMsg;
+      hintEl.classList.add('hint-success');
+      nextBtn.classList.remove('hidden');
+      hintEl.classList.remove('hidden');
+    } else {
+      hintEl.textContent = errorMsg;
+      hintEl.classList.remove('hint-success');
+      hintEl.classList.remove('hidden');
+    }
+  }
+  
+  document.getElementById('submit1').addEventListener('click', ()=> {
+    handleSubmit(
+      'input1', 
+      'hint1', 
+      'next1', 
+      '加官進祿', 
+      "✅ 成功!你找到第一片鱗片:心臟之鱗。下一個蹤跡出現在鯉魚的眼睛……前往【魚首】。",
+      "❌ 錯誤。仔細觀察門神身上的『冠』與『鹿』,並從成語陣中尋找線索。"
+    );
+  });
+
+  document.getElementById('submit2').addEventListener('click', ()=> {
+    handleSubmit(
+      'input2', 
+      'hint2', 
+      'next2', 
+      '貓山', 
+      "✅ 太好了,成功解開封印,獲得第二片鱗片。請打開你的視野與耳朵,前往老榕樹…..",
+      "❌ 錯誤。再仔細看看情書的拼圖吧,關鍵數字會帶你找到正確的山名。"
+    );
+  });
+
+  document.getElementById('submit3').addEventListener('click', ()=> {
+    handleSubmit(
+      'input3', 
+      'hint3', 
+      'next3', 
+      '136', 
+      "✅ 你解讀了山神的訊號。第3片鱗片回到你手中。你獲得了『聽覺之鱗』的力量。",
+      "❌ 錯誤。再聽一次鳥鳴吧,正確的編號就在你耳邊響著。仔細辨認真正的指引者。"
+    );
+  });
+
+  document.getElementById('submit4').addEventListener('click', ()=> {
+    handleSubmit(
+      'input4', 
+      'hint4', 
+      'next4', 
+      '圖根補點', 
+      "✅ 你將綠島與蘭嶼對回正確方位,大地之眼亮起,你獲得第4片鱗片『方向之鱗』。",
+      "❌ 錯誤。讓綠島與蘭嶼回到牠們真正的位置。仔細查看界碑上的文字。"
+    );
+  });
+
+  document.getElementById('submit5').addEventListener('click', ()=> {
+    const raw = document.getElementById('input5').value;
+    const hintEl = document.getElementById('hint5');
+    const nextBtn = document.getElementById('next5');
+
+    const ok = raw.includes('忠') && raw.includes('勇') && raw.includes('守');
+
+    hintEl.classList.remove('hint-success');
+    nextBtn.classList.add('hidden');
+
+    if(ok){
+      hintEl.textContent = "✅ 成功!你解讀了趙子龍的武魂密碼,獲得第五片鱗片『武魂之鱗』。請順著山脊的風,前往『龍鳳塔』。";
+      hintEl.classList.add('hint-success');
+      nextBtn.classList.remove('hidden');
+      hintEl.classList.remove('hidden');
+    } else {
+      hintEl.textContent = "❌ 錯誤。再把透明圖卡放到文物上看看吧。找出趙子龍真正的武魂精神,再試一次!";
+      hintEl.classList.remove('hint-success');
+      hintEl.classList.remove('hidden');
+    }
+  });
+
+  document.getElementById('submitFinal').addEventListener('click', ()=> {
+    const v = norm(document.getElementById('inputFinal').value);
+    const hintEl = document.getElementById('hintFinal');
+    const doneBtn = document.getElementById('doneBtn');
+
+    hintEl.classList.remove('hint-success');
+    doneBtn.classList.add('hidden');
+
+    if(v === norm('龍鳳寶玉塔')){
+      hintEl.textContent = "✅ 太棒了!你找出了龍鳳塔的真正名號。山海之脈正式被喚醒,五片神鱗完美歸位!";
+      hintEl.classList.add('hint-success');
+      doneBtn.classList.remove('hidden');
+      hintEl.classList.remove('hidden');
+    } else {
+      hintEl.textContent = "❌ 錯誤。再觀察一下五片鱗片上的字的排序吧——它們正在指引你說出這座塔的真正名字。";
+      hintEl.classList.remove('hint-success');
+      hintEl.classList.remove('hidden');
+    }
+  });
+
+  function congrat(){
+    setTimeout(() => show('ending'), 500);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    show('start');
+  });
+</script>
 </body>
 </html>
-
