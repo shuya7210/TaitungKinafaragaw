@@ -37,10 +37,9 @@
   
   header{margin-bottom: 25px; text-align: center;}
   h1{margin:0; font-size:2rem; color:var(--gold-main); text-shadow: 0 0 8px rgba(255, 215, 0, 0.4); border-bottom: 3px solid var(--gold-main); padding-bottom: 10px;}
-  p.lead{margin:6px 0 18px 0; color:rgba(255, 204, 102, 0.7); font-size: 1.1em; text-align:center;}
+  p.lead{margin:6px 0 18px 0; color:rgba(255, 204, 102, 0.7); font-size: 1.1em; text-align: center;} /* 置中 */
 
-  /* 文字皆置中 */
-  .section{ 
+  .section{
     margin-top:25px; 
     padding:20px; 
     border-radius:10px; 
@@ -48,34 +47,42 @@
     box-shadow:0 6px 20px rgba(0,0,0,0.5);
     min-height: 250px; 
     transition: all 0.5s ease;
-    text-align: center;
   }
   
   .section-content {
       padding: 15px;
       background: rgba(0, 0, 0, 0.4);
       border-radius: 8px;
-      text-align: center; /* ensure inner text centered */
+      text-align: center; /* 內容置中 */
+  }
+  
+  /* 針對特定內容做微調，確保可讀性 (劇情引導文字加大) */
+  .section-content p, .section-content div:not(.flex-row, .media-container, .audio-player, .audio-item, .placeholder-img, .hint, .plot-text) {
+      text-align: center;
+      /* 調整所有劇情和引導文字的大小 */
+      font-size: 1.1rem; 
+      line-height: 1.8; /* 增加行高 */
   }
 
+  /* 針對標題和特別的文字做調整 */
   .section h2, .section h3 {
     color:var(--gold-main); 
     border-bottom: 1px solid rgba(255, 204, 102, 0.3); 
     padding-bottom: 8px; 
     margin-top: 0;
-    text-align: center;
+    text-align: center; /* 標題置中 */
   }
   .section h2 { font-size:1.8rem; }
   .section h3 { font-size:1.5rem; border-bottom: 1px dashed rgba(255, 204, 102, 0.15); }
 
   .hidden{display:none !important}
-  .flex-row{display:flex; gap:15px; align-items:center; flex-wrap:wrap; margin-top: 20px; justify-content:center;}
-  .flex-row .btn { flex-grow: 1; }
+  .flex-row{display:flex; gap:15px; align-items:center; flex-wrap:wrap; margin-top: 20px; justify-content: center;} /* 置中按鈕行 */
+  .flex-row .btn { flex-grow: 1; max-width: 300px; } /* 限制按鈕寬度 */
 
   .btn{
     padding:12px 20px; border-radius:10px; border:2px solid var(--gold-main); cursor:pointer; font-weight:700;
     color:var(--btn-text-dark); background:var(--gold-main); box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3); transition: all 0.2s ease;
-    font-size: 18px; /* 加大按鈕文字為 18px */
+    font-size: 18px; /* 調整按鈕文字大小 */
   }
   .btn:hover{
     background:var(--gold-hover); border-color: var(--gold-hover); transform: translateY(-1px); box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
@@ -89,15 +96,15 @@
   }
 
   input[type="text"]{
-    width:100%; padding:14px 16px; border-radius:8px; border:1px solid rgba(255, 204, 102, 0.4); font-size:16px;
+    width:80%; max-width: 400px; padding:14px 16px; border-radius:8px; border:1px solid rgba(255, 204, 102, 0.4); font-size:16px;
     margin-top:15px; box-sizing:border-box; background: rgba(0, 0, 0, 0.8); color: var(--text-light); font-weight: 500;
-    text-align: center; /* 將輸入文字置中 */
+    text-align: center; /* 輸入框文字置中 */
   }
   input[type="text"]:focus {
     border-color: var(--gold-main); box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); outline: none;
   }
 
-  .hint{color:var(--hint-red); margin-top:15px; font-weight:700; padding: 12px; border-radius: 6px; background: rgba(231, 76, 60, 0.15); display:inline-block;}
+  .hint{color:var(--hint-red); margin:15px auto 0 auto; font-weight:700; padding: 12px; border-radius: 6px; background: rgba(231, 76, 60, 0.15); max-width: 80%;} /* 提示置中 */
   .hint-success { color:var(--hint-success); background: rgba(50, 255, 126, 0.15); }
 
   .media-container{
@@ -112,20 +119,19 @@
   .placeholder-img{
     padding: 60px 30px; background: rgba(30, 30, 30, 0.8); 
     border: 2px dashed rgba(255, 204, 102, 0.4); border-radius: 8px; 
-    color: rgba(255, 204, 102, 0.6); font-size: 0.95rem; line-height: 1.6;
-    display:inline-block;
+    color: rgba(255, 204, 102, 0.6); font-size: 0.9rem; line-height: 1.6;
+    text-align: center;
   }
   
   .audio-player{
-    display: flex; flex-direction: column; gap: 12px; margin: 20px 0; padding: 20px;
+    display: flex; flex-direction: column; gap: 12px; margin: 20px auto; padding: 20px; /* 置中 */
     background: rgba(30, 30, 30, 0.8); border-radius: 8px; border: 1px solid rgba(255, 204, 102, 0.3);
-    align-items: stretch;
+    max-width: 500px;
   }
   
   .audio-item{
     display: flex; align-items: center; gap: 15px; padding: 12px; background: rgba(0, 0, 0, 0.5);
     border-radius: 6px; border: 1px solid rgba(255, 204, 102, 0.2);
-    justify-content: center;
   }
   
   .audio-item label{
@@ -137,9 +143,13 @@
   }
   
   .plot-text {
-    margin-top:20px; padding:10px 15px; border-left: 4px solid var(--gold-main); color:rgba(255, 204, 102, 0.8); 
-    font-size: 0.95rem; background: rgba(30, 30, 30, 0.7); border-radius: 4px;
-    display:inline-block; text-align: left; /* 內文保留左對齊以利閱讀，但整區塊置中 */
+    margin:20px auto 0 auto; /* 置中 */
+    padding:10px 15px; border-left: 4px solid var(--gold-main); color:rgba(255, 204, 102, 0.8); 
+    font-size: 1.1rem; /* <-- 已調整 */
+    line-height: 1.8; /* <-- 已調整 */
+    background: rgba(30, 30, 30, 0.7); border-radius: 4px;
+    max-width: 80%;
+    text-align: center; /* 劇情文字置中 */
   }
   .plot-text em { color: var(--gold-main); font-style: normal; }
 
@@ -148,9 +158,9 @@
     .container{padding:16px; margin: 8px auto;}
     .flex-row { flex-direction: column; }
     .btn{width:100%; margin-top: 10px;}
-    .flex-row .btn { flex-grow: 0; }
+    .flex-row .btn { flex-grow: 0; max-width: 100%; }
     .audio-item { flex-direction: column; align-items: stretch; }
-    .plot-text { text-align: left; width: 100%; }
+    input[type="text"] { width: 100%; }
   }
 </style>
 </head>
@@ -158,25 +168,27 @@
   <div class="container" role="application" aria-labelledby="title">
     <header id="mainHeader">
       <h1 id="title">沉睡的山靈</h1>
-      <h1 id="title2">失落的五鱗片</h1>
-      <p class="lead">
-        台東鯉魚山，其形如巨鯉化身，傳說守護台東之風、雨、山、海。山神以五片鱗片維持天地平衡。神力散落後，世界開始失序……
-      </p>
-      <!-- 新增首頁遊戲圖片（請上傳 images/home_banner.png 或自行替換） -->
-      <div class="media-container" aria-hidden="false">
-        <img src="images/home_banner.png" alt="沉睡的山靈 遊戲首圖 (home_banner.png)">
+      <h1 id="title">失落的五鱗片</h1>
+      <p class="lead">台東鯉魚山,其形如巨鯉化身,<br>傳說守護台東之風、雨、山、海。<br>山神以五片鱗片維持天地平衡。<br>神力散落後,世界開始失序……</p>
+      
+      <div class="media-container" style="margin: 20px auto 35px auto; max-width: 600px;">
+        <img src="images/cover.png" alt="遊戲封面圖：鯉魚山意象圖" style="display: none;" onerror="this.onerror=null; this.parentElement.innerHTML = this.parentElement.querySelector('.placeholder-img').outerHTML;">
+        <div class="placeholder-img" style="padding: 40px 20px; font-size: 1.1rem;">
+          🏞️ 遊戲封面圖 (images/cover.png)
+        </div>
       </div>
+
     </header>
 
     <section id="start" class="section">
       <div class="section-content">
         <h2>前言</h2>
-        <p style="font-size: 1.1rem; margin-top: 18px;">
-          <em>「鯉魚沉眠，神鱗盡失。修復者，你聽到了山神的呼喚嗎？」</em>
+        <p style="text-align: center; font-size: 1.2rem; margin-top: 20px;">
+          <em>鯉魚沉眠,神鱗盡失。<br><br>修復者<br>你聽到了山神的呼喚嗎?</em>
         </p>
         
-        <div class="plot-text" style="text-align:left; max-width:720px;">
-          你被選為『修復者』，需沿古路找回五鱗。這是一場與時間、與失序世界的賽跑。你準備好進入鯉魚山的古老迷陣了嗎？
+        <div class="plot-text">
+          你被選為『修復者』,需沿古路找回五鱗。這是一場與時間、與失序世界的賽跑。你準備好進入鯉魚山的古老迷陣了嗎?
         </div>
 
         <div class="flex-row" style="justify-content: center;">
@@ -188,52 +200,57 @@
     <section id="challenge" class="section hidden">
       <div class="section-content">
         <h2>接受挑戰</h2>
-        <p style="font-size: 1.05rem; color:var(--text-light); margin-top: 12px;">
-          <strong>山神最終考驗：</strong><br>
-          你需要找回五片散落的鱗片，每片鱗片都藏在鯉魚山的五個不同部位，由古老的謎語守護。一旦踏入，便無回頭路。
+        <p style="font-size: 1.1rem; color:var(--text-light);">
+          <strong>山神:</strong><br>
+          找回五片散落的鱗片,<br>散落在鯉魚山的五個不同部位,<br>由古老的謎語守護。<br><br>一旦踏入,便無回頭路。
         </p>
 
-        <div class="plot-text" style="text-align:left; max-width:720px;">
-          <em>山神：</em> 吾之力源於此山。解開成語之陣，心臟之鱗方能甦醒。此處力量深沉，解開陣法，你才能繼續前行。
-        </div>
-
         <div class="flex-row">
-          <button id="btnReady" class="btn">我準備好了，接受挑戰！</button>
+          <button id="btnReady" class="btn">我準備好了,接受挑戰!</button>
           <button id="btnWait" class="btn btn-ghost">再等等</button>
         </div>
 
-        <p id="startMsg" class="hint hidden" style="display:inline-block;"></p>
+        <p id="startMsg" class="hint hidden"></p>
       </div>
     </section>
 
-    <!-- 第一關 起點（內容文字已改寫） -->
     <section id="gate1" class="section hidden" aria-live="polite">
       <div class="section-content">
-        <h3>第一關｜忠烈祠：心臟之鱗</h3>
-        <div style="margin-top:12px; max-width:720px; margin-left:auto; margin-right:auto; text-align:left;">
-          <p><strong>山神：</strong><br>
-          你已抵達鯉魚之心。<br>
-          此處力量深沉，卻因封印而沉眠。<br>
-          解開成語之陣，心臟之鱗能甦醒。</p>
-
-          <p><strong>門神：</strong><br>
-          力量被藏在我的容顏冠之中，仔細琢磨，<br>
-          你便能看見命運留下的答案。</p>
-
-          <p>請從成語卡陣中找出正確的成語，解除封印。</p>
+        <h3>第一關｜忠烈祠:心臟之鱗</h3>
+        <div style="margin-top:15px; line-height: 1.6;">
+          <strong style="display: block; margin-bottom: 10px;">
+            山神：
+          </strong>
+          <p style="margin: 5px 0; color:rgba(255, 204, 102, 0.9);">
+            你已抵達鯉魚之心。
+          </p>
+          <p style="margin: 5px 0; color:rgba(255, 204, 102, 0.9);">
+            此處力量深沉，卻因封印而沉眠。<br>
+            解開成語之陣，心臟之鱗能甦醒。
+          </p>
+          <strong style="display: block; margin-top: 15px; margin-bottom: 10px;">
+            門神：
+          </strong>
+          <p style="margin: 5px 0; color:rgba(255, 204, 102, 0.9);">
+            力量被藏在我的容顏冠冕之中， 仔細琢磨，<br>
+            你便能看見命運留下的答案。
+          </p>
+          <p style="margin: 15px 0 0 0; color: var(--gold-main);font-weight: 700;">
+            請從成語卡陣中找出正確的成語<br>解除封印
+          </p>
         </div>
 
         <div class="media-container">
-          <div class="placeholder-img">
-            🖼️ 門神圖案<br>
-            (請上傳 images/gategod.png)
+          <img src="images/gategod.png" alt="門神圖案" style="max-width: 400px; margin: 20px auto; display: none;" onerror="this.onerror=null; this.parentElement.innerHTML = this.parentElement.querySelector('.placeholder-img').outerHTML;">
+          <div class="placeholder-img" style="max-width: 400px; margin: 20px auto;">
+            🖼️ 門神圖案 (images/gategod.png)
           </div>
         </div>
 
         <input id="input1" type="text" placeholder="請輸入成語">
         <div id="hint1" class="hint hidden" aria-live="polite"></div>
 
-        <div class="flex-row" style="justify-content: flex-end;">
+        <div class="flex-row" style="justify-content: center;">
           <button id="submit1" class="btn">提交答案</button>
         </div>
       </div>
@@ -244,48 +261,64 @@
         <h2 style="font-size: 2rem; color: var(--hint-success); margin-bottom: 20px;">✅ 第一關 通過！</h2>
         
         <div class="media-container" style="margin: 30px auto; max-width: 400px;">
+          <img src="images/scale1.png" alt="心臟之鱗" style="display: none;" onerror="this.onerror=null; this.parentElement.innerHTML = this.parentElement.querySelector('.placeholder-img').outerHTML;">
           <div class="placeholder-img" style="border-color: var(--hint-success);">
-            💚 心臟之鱗<br>
-            (請上傳 images/scale1.png)
+            💚 心臟之鱗 (images/scale1.png)
           </div>
         </div>
 
-        <div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-light); margin: 25px 0; padding: 16px; background: rgba(0,0,0,0.5); border-radius: 10px; border-left: 5px solid var(--hint-success);">
-          <p style="margin: 8px 0; color: var(--hint-success); font-weight: 700;">🎉 做得好！你找到第一片鱗片</p>
-          <p style="margin: 8px 0;">下一個蹤跡出現在鯉魚的眼睛……前往【鯉首】。</p>
+        <div style="font-size: 1.2rem; line-height: 1.8; color: var(--text-light); margin: 25px auto; padding: 20px; background: rgba(0, 0, 0, 0.5); border-radius: 10px; border-left: 5px solid var(--hint-success); max-width: 80%;">
+          <p style="margin: 10px 0; color: var(--hint-success); font-weight: 700;">
+            🎉 你找到第一片鱗片：<br>心臟之鱗
+          </p>
+          <p style="margin: 10px 0;">
+            做得好！你解開了門神的守護，<br>巨鯉的心臟開始跳動。
+          </p>
+          <p style="margin: 10px 0;">
+            下一個蹤跡，出現在鯉魚的眼睛……
+          </p>
         </div>
 
-        <div class="flex-row" style="justify-content: center; margin-top: 20px;">
-          <button class="btn" onclick="goTo('gate2')">前往第二關 → 魚首</button>
+        <div class="flex-row" style="justify-content: center; margin-top: 30px;">
+          <button class="btn" onclick="goTo('gate2')">前往第二關 → 鯉首</button>
         </div>
       </div>
     </section>
 
-    <!-- 第二關 傳說 -->
     <section id="gate2" class="section hidden" aria-live="polite">
       <div class="section-content">
-        <h3>第二關｜魚首：巨鯉之眼</h3>
-        <div style="margin-top:12px; max-width:720px; margin-left:auto; margin-right:auto; text-align:left;">
-          <p>台東平原少年與原住民公主的淒美愛情故事。<br>
-          少年因被追殺而自盡，化身為鯉魚山，留下了一封被撕毀的情書....</p>
-
-          <p>頭目為防魚靈作亂，請來監視者，<br>
-          監視者卻撕毀情書並設下封印。</p>
-
-          <p>請幫助公主復原情書並解除封印。請拿出被撕毀的情書，試著拼出原貌，接著對照密碼卡，找出關鍵數字。並在現場找出關鍵數字對應的山名，請輸入山名：</p>
+        <h3>第二關｜鯉首 傳說</h3>
+        <div style="margin-top:15px; line-height: 1.6;">
+          <p style="margin: 5px 0; color:rgba(255, 204, 102, 0.9);">
+            台東平原少年與原住民公主的淒美愛情故事。<br>
+            少年因被追殺而自盡，化身為鯉魚山，留下了一封被撕毀的情書...
+          </p>
+          <p style="margin: 15px 0; color:rgba(255, 204, 102, 0.9);">
+            頭目為防魚靈作亂，請來監視者，<br>
+            監視者卻撕毀情書並設下封印。
+          </p>
         </div>
 
         <div class="media-container">
-          <div class="placeholder-img">
-            🧩 情書拼圖<br>
-            (請上傳 images/letter_puzzle.png)
+          <img src="images/letter_puzzle.png" alt="情書拼圖" style="max-width: 400px; margin: 20px auto; display: none;" onerror="this.onerror=null; this.parentElement.innerHTML = this.parentElement.querySelector('.placeholder-img').outerHTML;">
+          <div class="placeholder-img" style="max-width: 400px; margin: 20px auto;">
+            🧩 情書拼圖 (images/letter_puzzle.png)
           </div>
         </div>
+          <p style="margin: 15px 0 0 0; font-weight: 700;">
+            請幫助公主復原情書並解除封印<br>
+            請拿出被撕毀的情書，試著拼出原貌，<br>
+            接著對照密碼卡，找出關鍵數字。<br>
+            並在現場找出關鍵數字對應的山名<br>          
+<p style="margin: 15px 0; color: var(--gold-main); font-weight: 700;">
+           請輸入山名：
+          </p>
+
 
         <input id="input2" type="text" placeholder="請輸入山名">
         <div id="hint2" class="hint hidden" aria-live="polite"></div>
 
-        <div class="flex-row" style="justify-content: flex-end;">
+        <div class="flex-row" style="justify-content: center;">
           <button id="submit2" class="btn">提交答案</button>
         </div>
       </div>
@@ -296,81 +329,79 @@
         <h2 style="font-size: 2rem; color: var(--hint-success); margin-bottom: 20px;">✅ 第二關 通過！</h2>
         
         <div class="media-container" style="margin: 30px auto; max-width: 400px;">
+          <img src="images/scale2.png" alt="巨鯉之眼" style="display: none;" onerror="this.onerror=null; this.parentElement.innerHTML = this.parentElement.querySelector('.placeholder-img').outerHTML;">
           <div class="placeholder-img" style="border-color: var(--hint-success);">
-            👁️ 巨鯉之眼<br>
-            (請上傳 images/scale2.png)
+            👁️ 巨鯉之眼 (images/scale2.png)
           </div>
         </div>
 
-        <div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-light); margin: 25px 0; padding: 16px; background: rgba(0,0,0,0.5); border-radius: 10px; border-left: 5px solid var(--hint-success);">
-          <p style="margin: 8px 0; color: var(--hint-success); font-weight: 700;">🎉 太好了！你找到第二片鱗片</p>
-          <p style="margin: 8px 0;">請打開你的視野與耳朵，前往【老榕樹】...</p>
+        <div style="font-size: 1.2rem; line-height: 1.8; color: var(--text-light); margin: 25px auto; padding: 20px; background: rgba(0, 0, 0, 0.5); border-radius: 10px; border-left: 5px solid var(--hint-success); max-width: 80%;">
+          <p style="margin: 10px 0; color: var(--hint-success); font-weight: 700;">
+            🎉 太好了！你找到第二片鱗片！
+          </p>
+          <p style="margin: 10px 0;">
+            情書的密碼被你破解，<br>鯉魚的雙眼開始發光。
+          </p>
+          <p style="margin: 10px 0;">
+            請打開你的視野與耳朵，<br>前往【老榕樹】...
+          </p>
         </div>
 
-        <div class="flex-row" style="justify-content: center; margin-top: 20px;">
+        <div class="flex-row" style="justify-content: center; margin-top: 30px;">
           <button class="btn" onclick="goTo('gate3')">前往第三關 → 魚背</button>
         </div>
       </div>
     </section>
 
-    <!-- 第三關 聽聲辨鳥 -->
     <section id="gate3" class="section hidden" aria-live="polite">
       <div class="section-content">
-        <h3>第三關｜魚背：聽覺之鱗</h3>
-        <div style="margin-top:12px; max-width:720px; margin-left:auto; margin-right:auto; text-align:left;">
-          <p>山神墜入沉睡之後，<br>
-          林中鳥群開始出現異常騷動。<br>
-          知道鱗片位置的只有三位使者。</p>
-
-          <p>鳥群混雜，一些惡作劇模仿的聲音，想迷惑闖入者......</p>
-
-          <p>請透過聆聽音檔與圖示卡提示，找出真正的三隻鳥類使者。<br>
-          (請輸入編號)</p>
+        <h3>第三關｜聽聲辨鳥</h3>
+        <div style="margin-top:15px; line-height: 1.6;">
+          <p style="margin: 5px 0; color:rgba(255, 204, 102, 0.9);">
+            山神墜入沉睡之後<br>林中鳥群開始出現異常騷動<br>
+            知道鱗片位置的只有三位使者
+          </p>
+          <p style="margin: 15px 0; color:rgba(255, 204, 102, 0.9);">
+            鳥群混雜，一些惡作劇模仿的聲音<br>
+            想迷惑闖入者......
+          </p>
+          <p style="margin: 15px 0 0 0;color: var(--gold-main); font-weight: 700;">
+            請透過聆聽音檔與圖示卡提示<br>
+            找出真正的三隻鳥類使者<br>
+            (請輸入編號)
+          </p>
         </div>
 
         <div class="audio-player">
           <div class="audio-item">
             <label>鳥叫聲 1:</label>
+            <audio controls src="audio/bird1.mp3" style="display: none;"></audio>
             <div style="flex-grow:1; padding:8px; background:rgba(255,204,102,0.1); border-radius:4px; text-align:center;">
               🎵 請上傳 audio/bird1.mp3
             </div>
           </div>
           <div class="audio-item">
             <label>鳥叫聲 2:</label>
+             <audio controls src="audio/bird2.mp3" style="display: none;"></audio>
             <div style="flex-grow:1; padding:8px; background:rgba(255,204,102,0.1); border-radius:4px; text-align:center;">
               🎵 請上傳 audio/bird2.mp3
             </div>
           </div>
           <div class="audio-item">
             <label>鳥叫聲 3:</label>
+             <audio controls src="audio/bird3.mp3" style="display: none;"></audio>
             <div style="flex-grow:1; padding:8px; background:rgba(255,204,102,0.1); border-radius:4px; text-align:center;">
               🎵 請上傳 audio/bird3.mp3
             </div>
           </div>
-          <div class="audio-item">
-            <label>鳥叫聲 4:</label>
-            <div style="flex-grow:1; padding:8px; background:rgba(255,204,102,0.1); border-radius:4px; text-align:center;">
-              🎵 請上傳 audio/bird4.mp3
-            </div>
-          </div>
-          <div class="audio-item">
-            <label>鳥叫聲 5:</label>
-            <div style="flex-grow:1; padding:8px; background:rgba(255,204,102,0.1); border-radius:4px; text-align:center;">
-              🎵 請上傳 audio/bird5.mp3
-            </div>
-          </div>
-          <div class="audio-item">
-            <label>鳥叫聲 6:</label>
-            <div style="flex-grow:1; padding:8px; background:rgba(255,204,102,0.1); border-radius:4px; text-align:center;">
-              🎵 請上傳 audio/bird6.mp3
-            </div>
+
           </div>
         </div>
 
         <input id="input3" type="text" placeholder="例如: 123">
         <div id="hint3" class="hint hidden" aria-live="polite"></div>
 
-        <div class="flex-row" style="justify-content: flex-end;">
+        <div class="flex-row" style="justify-content: center;">
           <button id="submit3" class="btn">提交答案</button>
         </div>
       </div>
@@ -381,48 +412,58 @@
         <h2 style="font-size: 2rem; color: var(--hint-success); margin-bottom: 20px;">✅ 第三關 通過！</h2>
         
         <div class="media-container" style="margin: 30px auto; max-width: 400px;">
+          <img src="images/scale3.png" alt="聽覺之鱗" style="display: none;" onerror="this.onerror=null; this.parentElement.innerHTML = this.parentElement.querySelector('.placeholder-img').outerHTML;">
           <div class="placeholder-img" style="border-color: var(--hint-success);">
-            🎵 聽覺之鱗<br>
-            (請上傳 images/scale3.png)
+            🎵 聽覺之鱗 (images/scale3.png)
           </div>
         </div>
 
-        <div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-light); margin: 25px 0; padding: 16px; background: rgba(0,0,0,0.5); border-radius: 10px; border-left: 5px solid var(--hint-success);">
-          <p style="margin: 8px 0; color: var(--hint-success); font-weight: 700;">🎉 你解讀了山神的訊號。</p>
-          <p style="margin: 8px 0;">太好了！成功獲得第三片鱗片</p>
-          <p style="margin: 8px 0;">山神的聲音在風裡指引著你……</p>
-          <p style="margin: 8px 0;">請抬起頭、往更遠的地方前進，前往『鯉尾觀景台』</p>
+        <div style="font-size: 1.2rem; line-height: 1.8; color: var(--text-light); margin: 25px auto; padding: 20px; background: rgba(0, 0, 0, 0.5); border-radius: 10px; border-left: 5px solid var(--hint-success); max-width: 80%;">
+          <p style="margin: 10px 0; color: var(--hint-success); font-weight: 700;">
+            🎉 你解讀了山神的訊號！
+          </p>
+          <p style="margin: 10px 0;">
+            太好了！成功獲得第三片鱗片<br>你獲得了『聽覺之鱗』的力量
+          </p>
+          <p style="margin: 10px 0;">
+            山神的聲音在風裡指引著你……<br>
+            請抬起頭、往更遠的地方前進
+          </p>
         </div>
 
-        <div class="flex-row" style="justify-content: center; margin-top: 20px;">
+        <div class="flex-row" style="justify-content: center; margin-top: 30px;">
           <button class="btn" onclick="goTo('gate4')">前往第四關 → 魚尾</button>
         </div>
       </div>
     </section>
 
-    <!-- 第四關 -->
     <section id="gate4" class="section hidden" aria-live="polite">
       <div class="section-content">
-        <h3>第四關｜魚尾：方向之鱗</h3>
-        <div style="margin-top:12px; max-width:720px; margin-left:auto; margin-right:auto; text-align:left;">
-          <p>巨鯉的尾鰭掌管著行進方向。<br>
-          將島嶼輪盤結合方位之神力，大地之眼便會甦醒。</p>
-
-          <p>旋轉你的『島嶼輪盤』與『平面圖』，將綠島和蘭嶼對準正確方位，找出有『十字記號』的聖物。<br>
-          輸入上面的文字密碼：</p>
+        <h3>第四關｜島嶼神力</h3>
+        <div style="margin-top:15px; line-height: 1.6;">
+          <p style="margin: 5px 0; color:rgba(255, 204, 102, 0.9); font-weight: 700;">
+            巨鯉的尾鰭掌管著行進方向<br>
+            將島嶼輪盤結合方位之神力<br>大地之眼便會甦醒
+          </p>
+          <p style="margin: 15px 0 0 0; font-weight: 700;">
+            旋轉你的『島嶼輪盤』與『平面圖』<br>
+            將綠島和蘭嶼對準正確方位<br>
+            找出有『十字記號』的聖物<br>
+            輸入上面的文字密碼
+          </p>
         </div>
 
         <div class="media-container">
-          <div class="placeholder-img">
-            🧭 羅盤地圖<br>
-            (請上傳 images/map.png)
+          <img src="images/map.png" alt="羅盤地圖" style="max-width: 400px; margin: 20px auto; display: none;" onerror="this.onerror=null; this.parentElement.innerHTML = this.parentElement.querySelector('.placeholder-img').outerHTML;">
+          <div class="placeholder-img" style="max-width: 400px; margin: 20px auto;">
+            🧭 羅盤地圖 (images/map.png)
           </div>
         </div>
 
         <input id="input4" type="text" placeholder="請輸入界碑文字">
         <div id="hint4" class="hint hidden" aria-live="polite"></div>
 
-        <div class="flex-row" style="justify-content: flex-end;">
+        <div class="flex-row" style="justify-content: center;">
           <button id="submit4" class="btn">提交答案</button>
         </div>
       </div>
@@ -433,46 +474,59 @@
         <h2 style="font-size: 2rem; color: var(--hint-success); margin-bottom: 20px;">✅ 第四關 通過！</h2>
         
         <div class="media-container" style="margin: 30px auto; max-width: 400px;">
+          <img src="images/scale4.png" alt="方向之鱗" style="display: none;" onerror="this.onerror=null; this.parentElement.innerHTML = this.parentElement.querySelector('.placeholder-img').outerHTML;">
           <div class="placeholder-img" style="border-color: var(--hint-success);">
-            🧭 方向之鱗<br>
-            (請上傳 images/scale4.png)
+            🧭 方向之鱗 (images/scale4.png)
           </div>
         </div>
 
-        <div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-light); margin: 25px 0; padding: 16px; background: rgba(0,0,0,0.5); border-radius: 10px; border-left: 5px solid var(--hint-success);">
-          <p style="margin: 8px 0; color: var(--hint-success); font-weight: 700;">🎉 你成功推動了力量。取得第四片鱗片</p>
-          <p style="margin: 8px 0;">大地之眼重新睜開，為你點亮前路。請前往『趙子龍廟』</p>
+        <div style="font-size: 1.2rem; line-height: 1.8; color: var(--text-light); margin: 25px auto; padding: 20px; background: rgba(0, 0, 0, 0.5); border-radius: 10px; border-left: 5px solid var(--hint-success); max-width: 80%;">
+          <p style="margin: 10px 0; color: var(--hint-success); font-weight: 700;">
+            🎉 你成功推動了力量。取得第四片鱗片！
+          </p>
+          <p style="margin: 10px 0;">
+            大地之眼重新睜開，為你點亮前路。
+          </p>
+          <p style="margin: 10px 0;">
+            最後一片鱗片就在前方
+          </p>
         </div>
 
-        <div class="flex-row" style="justify-content: center; margin-top: 20px;">
+        <div class="flex-row" style="justify-content: center; margin-top: 30px;">
           <button class="btn" onclick="goTo('gate5')">前往第五關 → 趙子龍廟</button>
         </div>
       </div>
     </section>
 
-    <!-- 第五關 -->
     <section id="gate5" class="section hidden" aria-live="polite">
       <div class="section-content">
-        <h3>第五關｜趙子龍廟：武魂之鱗</h3>
-        <div style="margin-top:12px; max-width:720px; margin-left:auto; margin-right:auto; text-align:left;">
-          <p>在古老的趙子龍廟深處，流傳著三道象徵英雄意志的石器試煉。</p>
-
-          <p>唯有能看懂石器紋路、拼組出其真意之人，方能獲得「勇者印記」，踏入更深層的武魂試煉。</p>
-
-          <p>請拿出透明圖卡與現場出土文物比對，拼出代表趙子龍「武魂精神」的三個關鍵字：</p>
+        <h3>第五關｜趙子龍 武魂之鱗</h3>
+        <div style="margin-top:15px; line-height: 1.6;">
+          <p style="margin: 5px 0; color:rgba(255, 204, 102, 0.9);">
+            在古老的趙子龍廟深處<br>
+            流傳著三道象徵英雄意志的石器試煉
+          </p>
+          <p style="margin: 15px 0; color:rgba(255, 204, 102, 0.9);">
+            唯有能看懂石器紋路<br>拼組出其真意之人，<br>
+            方能獲得「勇者印記」<br>踏入更深層的武魂試煉
+          </p>
+          <p style="margin: 15px 0 0 0;color: var(--gold-main); font-weight: 700;">
+            請拿出透明圖卡與現場出土文物比對<br>
+            拼出代表趙子龍「武魂精神」的三個關鍵字
+          </p>
         </div>
 
         <div class="media-container">
-          <div class="placeholder-img">
-            🔍 透明圖卡比對<br>
-            (請上傳 images/overlay.png)
+          <img src="images/overlay.png" alt="透明圖卡比對" style="max-width: 400px; margin: 20px auto; display: none;" onerror="this.onerror=null; this.parentElement.innerHTML = this.parentElement.querySelector('.placeholder-img').outerHTML;">
+          <div class="placeholder-img" style="max-width: 400px; margin: 20px auto;">
+            🔍 透明圖卡比對 (images/overlay.png)
           </div>
         </div>
 
         <input id="input5" type="text" placeholder="請輸入三個關鍵字">
         <div id="hint5" class="hint hidden" aria-live="polite"></div>
 
-        <div class="flex-row" style="justify-content: flex-end;">
+        <div class="flex-row" style="justify-content: center;">
           <button id="submit5" class="btn">提交答案</button>
         </div>
       </div>
@@ -483,45 +537,52 @@
         <h2 style="font-size: 2rem; color: var(--hint-success); margin-bottom: 20px;">✅ 第五關 通過！</h2>
         
         <div class="media-container" style="margin: 30px auto; max-width: 400px;">
+          <img src="images/scale5.png" alt="武魂之鱗" style="display: none;" onerror="this.onerror=null; this.parentElement.innerHTML = this.parentElement.querySelector('.placeholder-img').outerHTML;">
           <div class="placeholder-img" style="border-color: var(--hint-success);">
-            ⚔️ 武魂之鱗<br>
-            (請上傳 images/scale5.png)
+            ⚔️ 武魂之鱗 (images/scale5.png)
           </div>
         </div>
 
-        <div style="font-size: 1.05rem; line-height: 1.8; color: var(--text-light); margin: 25px 0; padding: 16px; background: rgba(0,0,0,0.5); border-radius: 10px; border-left: 5px solid var(--hint-success);">
-          <p style="margin: 8px 0; color: var(--hint-success); font-weight: 700;">🎉 太好了！你成功解讀了趙子龍的武魂密碼。</p>
-          <p style="margin: 8px 0;">這三股護山之力流回了廟堂，你也獲得了第五片鱗片。</p>
-          <p style="margin: 8px 0;">抬起頭吧，旅人。山神的最終力量在等待你的到來……</p>
-          <p style="margin: 8px 0;">請順著山脊的風，前往鱗片復原儀式的終點，『龍鳳塔』</p>
+        <div style="font-size: 1.2rem; line-height: 1.8; color: var(--text-light); margin: 25px auto; padding: 20px; background: rgba(0, 0, 0, 0.5); border-radius: 10px; border-left: 5px solid var(--hint-success); max-width: 80%;">
+          <p style="margin: 10px 0; color: var(--hint-success); font-weight: 700;">
+            🎉 成功解讀了趙子龍的武魂密碼！
+          </p>
+          <p style="margin: 10px 0;">
+            這三股護山之力流回了廟堂<br>你獲得了第五片鱗片『武魂之鱗』<br>五片神鱗已全部收集
+          </p>
+          <p style="margin: 10px 0;">
+            抬起頭吧，旅人<br>山神的最終力量在等待你的到來……<br>
+            請順著山脊的風<br>前往鱗片復原儀式的終點<br>
+          </p>
         </div>
 
-        <div class="flex-row" style="justify-content: center; margin-top: 20px;">
+        <div class="flex-row" style="justify-content: center; margin-top: 30px;">
           <button class="btn" onclick="goTo('final')">前往最終章 → 龍鳳塔</button>
         </div>
       </div>
     </section>
 
-    <!-- 最終章 -->
     <section id="final" class="section hidden" aria-live="polite">
       <div class="section-content">
-        <h3>最終章｜龍鳳塔：神力核心</h3>
-        <div style="margin-top:12px; max-width:720px; margin-left:auto; margin-right:auto; text-align:left;">
-          <p>恭喜你集齊五片鱗片！<br>
-          請仔細觀察鱗片上的字樣，找出此地的全名。</p>
+        <h3>最終章｜龍鳳塔:神力核心</h3>
+        <div style="margin-top:15px; line-height: 1.6;">
+          <p style="margin: 5px 0; color:rgba(255, 204, 102, 0.9); font-weight: 700;">
+            恭喜你集齊五片鱗片！<br>
+            請仔細觀察鱗片上的字樣，找出此地的全名
+          </p>
         </div>
 
         <div class="media-container">
-          <div class="placeholder-img">
-            ⭐ 五片鱗片圖<br>
-            (請上傳 images/scales.png)
+          <img src="images/scales.png" alt="五片鱗片圖" style="max-width: 400px; margin: 20px auto; display: none;" onerror="this.onerror=null; this.parentElement.innerHTML = this.parentElement.querySelector('.placeholder-img').outerHTML;">
+          <div class="placeholder-img" style="max-width: 400px; margin: 20px auto;">
+            ⭐ 五片鱗片圖 (images/scales.png)
           </div>
         </div>
 
         <input id="inputFinal" type="text" placeholder="請輸入龍鳳塔的全名">
         <div id="hintFinal" class="hint hidden" aria-live="polite"></div>
 
-        <div class="flex-row" style="justify-content: flex-end;">
+        <div class="flex-row" style="justify-content: center;">
           <button id="submitFinal" class="btn">提交答案</button>
         </div>
       </div>
@@ -533,38 +594,50 @@
           ✨ 山神復甦 ✨
         </h2>
         
-        <div class="media-container">
+        <div class="media-container" style="max-width: 600px; margin: 30px auto;">
+          <img src="images/ending.png" alt="結局配圖" style="display: none;" onerror="this.onerror=null; this.parentElement.innerHTML = this.parentElement.querySelector('.placeholder-img').outerHTML;">
           <div class="placeholder-img" style="border-color: var(--gold-main);">
-            🌟 結局配圖<br>
-            (請上傳 images/ending.png)
+            🌟 結局配圖 (images/ending.png)
           </div>
         </div>
 
-        <div style="font-size: 1.1rem; line-height: 1.8; color: var(--text-light); margin: 30px 0; padding: 20px; background: rgba(0, 0, 0, 0.5); border-radius: 10px; border-left: 5px solid var(--gold-main);">
-          <p style="margin: 10px 0;">「太棒了！你找出了龍鳳塔的真正名號」</p>
-          <p style="margin: 10px 0;">「山海之脈正式被喚醒，力量開始環繞整座鯉魚山」</p>
-          <p style="margin: 10px 0; color: var(--gold-main); font-weight: 700;">「這是一個只有真正完成任務的人才能看到的景象」</p>
+        <div style="font-size: 1.3rem; line-height: 2; color: var(--text-light); margin: 30px auto; padding: 25px; background: rgba(0, 0, 0, 0.5); border-radius: 10px; border-left: 5px solid var(--gold-main); max-width: 80%;">
+          <p style="margin: 15px 0;">
+            太棒了！你找出了龍鳳塔的真正名號
+          </p>
+          <p style="margin: 15px 0;">
+            山海之脈正式被喚醒<br>力量開始環繞整座鯉魚山
+          </p>
+          <p style="margin: 15px 0; color: var(--gold-main); font-weight: 700;">
+            真正完成任務的人才能看到此景
+          </p>
         </div>
 
-        <div style="margin-top: 24px; padding: 18px; background: rgba(255, 215, 0, 0.08); border-radius: 10px;">
-          <p style="font-size: 1.15rem; color: var(--gold-main); font-weight: 700; margin-bottom: 10px;">🏆 恭喜你，修復者！</p>
-          <p style="font-size: 1rem; color: rgba(255, 204, 102, 0.9);">五片神鱗已歸位，鯉魚山的守護之力重新甦醒。風、雨、山、海再次回歸平衡，台東大地將繼續繁榮昌盛。</p>
+        <div style="margin-top: 40px; padding: 20px; background: rgba(255, 215, 0, 0.1); border-radius: 10px; max-width: 80%; margin-left: auto; margin-right: auto;">
+          <p style="font-size: 1.5rem; color: var(--gold-main); font-weight: 700; margin-bottom: 15px;">
+            🏆 恭喜你，修復者！
+          </p>
+          <p style="font-size: 1.1rem; color: rgba(255, 204, 102, 0.9);">
+            五片神鱗已歸位，鯉魚山的守護之力重新甦醒。<br>
+            風、雨、山、海再次回歸平衡，台東大地將繼續繁榮昌盛。
+          </p>
         </div>
 
-        <div class="flex-row" style="justify-content: center; margin-top: 30px;">
+        <div class="flex-row" style="justify-content: center; margin-top: 40px;">
           <button class="btn" onclick="resetGame()">重新開始旅程</button>
         </div>
       </div>
     </section>
 
     <footer style="margin-top:20px; color:rgba(255, 204, 102, 0.4); font-size:14px; text-align: center;">
-      ※ 網頁設計: 淑雅
+      沉睡的山靈 失落的五麟 <br>WebDesign－Shuya
     </footer>
   </div>
 
 <script>
   function norm(s){
     if(!s) return '';
+    // 將輸入的字串進行標準化：移除空白、全形空格、零寬度不換行空格，轉小寫，並去除前後空白。
     return s.replace(/[\s\u3000\uFEFF\xA0]/g,'').trim().toLowerCase();
   }
 
@@ -614,7 +687,6 @@
     document.getElementById('startMsg').textContent = '⏳ 山神會在此處等候你的歸來。';
   });
 
-  // 第一關 邏輯（正確答案: 加官進祿）
   document.getElementById('submit1').addEventListener('click', ()=> {
     const v = norm(document.getElementById('input1').value);
     const hintEl = document.getElementById('hint1');
@@ -624,13 +696,13 @@
     if(v === norm('加官進祿')){
       show('success1');
     } else {
-      hintEl.textContent = "❌ 似乎不對。試著觀察門神身上的『鹿』與成語組合。";
+      // 錯誤答案提示
+      hintEl.textContent = "❌ 似乎不對。試著觀察門神身上的『鹿』與 成語組合。";
       hintEl.classList.remove('hint-success');
       hintEl.classList.remove('hidden');
     }
   });
 
-  // 第二關 邏輯（正確答案: 貓山）
   document.getElementById('submit2').addEventListener('click', ()=> {
     const v = norm(document.getElementById('input2').value);
     const hintEl = document.getElementById('hint2');
@@ -640,29 +712,31 @@
     if(v === norm('貓山')){
       show('success2');
     } else {
+      // 錯誤答案提示
       hintEl.textContent = "❌ 再仔細看看情書的拼圖吧，關鍵數字會帶你找到正確的名稱。別急，公主正在耐心等待你解開封印！";
       hintEl.classList.remove('hint-success');
       hintEl.classList.remove('hidden');
     }
   });
 
-  // 第三關 邏輯（正確答案: 136）
   document.getElementById('submit3').addEventListener('click', ()=> {
-    const v = norm(document.getElementById('input3').value);
+    // 接受 136, 1-3-6, 1 3 6 等格式，但必須包含這三個數字
+    const rawV = document.getElementById('input3').value;
+    const v = norm(rawV);
     const hintEl = document.getElementById('hint3');
     
     hintEl.classList.remove('hint-success');
 
-    if(v === norm('136')){
+    if(v.includes('1') && v.includes('3') && v.includes('6') && v.length >= 3){
       show('success3');
     } else {
+      // 錯誤答案提示
       hintEl.textContent = "❌ 嗯……好像不太對。再聽一次鳥鳴吧，仔細比對告示板上的鳥類照片與叫聲，正確的編號就在你耳邊響著。";
       hintEl.classList.remove('hint-success');
       hintEl.classList.remove('hidden');
     }
   });
 
-  // 第四關 邏輯（正確答案: 圖根補點）
   document.getElementById('submit4').addEventListener('click', ()=> {
     const v = norm(document.getElementById('input4').value);
     const hintEl = document.getElementById('hint4');
@@ -672,17 +746,18 @@
     if(v === norm('圖根補點')){
       show('success4');
     } else {
-      hintEl.textContent = "❌ 讓綠島與蘭嶼回到它們真正的位置。";
+      // 錯誤答案提示
+      hintEl.textContent = "❌ 錯誤。讓綠島與蘭嶼回到它們真正的位置。";
       hintEl.classList.remove('hint-success');
       hintEl.classList.remove('hidden');
     }
   });
 
-  // 第五關 邏輯（包含任意排序的 忠 勇 守）
   document.getElementById('submit5').addEventListener('click', ()=> {
     const raw = document.getElementById('input5').value;
     const hintEl = document.getElementById('hint5');
-
+    
+    // 答案為 '忠', '勇', '守' (任意排序和輸入方式，只要包含這三個字即可)
     const ok = raw.includes('忠') && raw.includes('勇') && raw.includes('守');
 
     hintEl.classList.remove('hint-success');
@@ -690,13 +765,13 @@
     if(ok){
       show('success5');
     } else {
+      // 錯誤答案提示
       hintEl.textContent = "❌ 再把透明圖卡放到文物上看看吧。三個關鍵字就藏在圖案交疊的地方，找出趙子龍真正的武魂精神，再試一次！";
       hintEl.classList.remove('hint-success');
       hintEl.classList.remove('hidden');
     }
   });
 
-  // 最終關 邏輯（正確答案: 龍鳳寶玉塔）
   document.getElementById('submitFinal').addEventListener('click', ()=> {
     const v = norm(document.getElementById('inputFinal').value);
     const hintEl = document.getElementById('hintFinal');
@@ -706,7 +781,8 @@
     if(v === norm('龍鳳寶玉塔')){
       show('ending');
     } else {
-      hintEl.textContent = "❌ 好像還差一步！再觀察一下五片鱗片上的字的排序吧。它們正在指引你說出這座塔的真正名字。當你找到正確的關鍵字，儀式就會啟動！";
+      // 錯誤答案提示
+      hintEl.textContent = "❌ 好像還差一步！再觀察一下五片鱗片上的字的排序吧，它們正在指引你說出這座塔的真正名字。當你找到正確的關鍵字，儀式就會啟動！";
       hintEl.classList.remove('hint-success');
       hintEl.classList.remove('hidden');
     }
